@@ -1,0 +1,62 @@
+<div class="container letra">
+    <div class="row">
+      
+      <div class="col-12 text-center">
+        <h1 class="pt-4">Servicios que Ofrecemos</h1>
+      </div>
+      <div *ngIf="servicios.length > 0" class="row">
+        <div *ngFor="let servicio of servicios" class="col-md-4 mb-4">
+          <div class="card">
+            <img [src]="servicio.imagen" class="card-img-top" alt="Imagen del servicio">
+            <div class="card-body">
+              <h5 class="card-title">{{ servicio.nombre }}</h5>
+              <p class="card-text">{{ servicio.descripcion }}</p>
+              <p class="text-primary font-weight-bold">${{ servicio.precio }} + IVA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="assets/servicio1.jpeg" class="card-img-top" alt="Servicio Técnico A">
+        <div class="card-body">
+          <h5 class="card-title">Servicio Técnico A</h5>
+          <p class="card-text">
+            Realizamos mantenimiento preventivo y correctivo para equipos de computación, redes y sistemas. Nuestros técnicos están altamente capacitados para resolver cualquier inconveniente técnico.
+          </p>
+          <p class="text-primary font-weight-bold">$150 + IVA</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="assets/servicio2.jpeg" class="card-img-top" alt="Servicio Técnico B">
+        <div class="card-body">
+          <h5 class="card-title">Servicio Técnico B</h5>
+          <p class="card-text">
+            Ofrecemos diagnóstico y reparación de dispositivos electrónicos como teléfonos móviles, tabletas y computadoras portátiles. Servicio rápido y confiable.
+          </p>
+          <p class="text-primary font-weight-bold">$120 + IVA</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="assets/servicio3.jpg" class="card-img-top" alt="Servicio Técnico C">
+        <div class="card-body">
+          <h5 class="card-title">Servicio Técnico C</h5>
+          <p class="card-text">
+            Instalación y configuración de redes de internet, así como soporte técnico para empresas. Garantizamos una conectividad estable y eficiente.
+          </p>
+          <p class="text-primary font-weight-bold">$200 + IVA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
