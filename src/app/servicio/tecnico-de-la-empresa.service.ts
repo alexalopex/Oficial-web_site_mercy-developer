@@ -1,5 +1,4 @@
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 import { environment } from "../../environments/environment.development";
 import { Injectable } from "@angular/core";
 
@@ -7,12 +6,12 @@ import { Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class TecnicoDeLaEmpresaService {
-  backend = environment.backend + "/tecnicos"; 
+  backend = environment.backend + "/tecnicos_de_la_empresa"; 
 
 
   constructor(private http: HttpClient) { }
 
-  obtenerTecnicos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.backend}/tecnicos/obtener-tecnicos`);
+  obtenerTecnicos(){
+  return this.http.get(`${environment.backend}/obtener-tecnicos`);
   }
 }

@@ -1,3 +1,44 @@
 .letra {
     font-family: 'Comic Sans MS', sans-serif;
 }
+
+/* Ajustes de estilo para las tarjetas de técnicos */
+.card {
+    border: 1px solid #ddd; /* Borde claro para cada tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  .card-body {
+    padding: 20px; /* Espaciado dentro de las tarjetas */
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Título en la tarjeta */
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Descripción del técnico */
+    color: #555;
+  }
+  
+  .card img {
+    border-radius: 50%; /* Imagen redonda del técnico */
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Estilo de los botones en las tarjetas */
+  .btn-info {
+    background-color: #17a2b8; /* Color azul del botón */
+    border-color: #17a2b8;
+  }
+  
+  .btn-info:hover {
+    background-color: #138496; /* Color al pasar el ratón */
+    border-color: #117a8b;
+  }
+  

@@ -1,23 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiciosDeLaEmpresaService } from '../../servicio/servicios-de-la-empresa.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
-  styleUrl: './servicios.component.css'
+  styleUrls: ['./servicios.component.css']
 })
-export class ServiciosComponent {
+export class ServiciosComponent implements OnInit {
   servicios: any[] = [];
-  constructor(private serviciosDeLaEmpresaSrv: ServiciosDeLaEmpresaService) { }
+  errorMensaje: string = '';
 
-  ngOnInit(): void {
-    
-    this.serviciosDeLaEmpresaSrv.obtenerServicios().subscribe(
+  constructor(private serviciosDeLaEmpresaService: ServiciosDeLaEmpresaService) {}
+
+  ngOnInit() {
+    this.obtenerServicios();
+  }
+
+  obtenerServicios() {
+    this.serviciosDeLaEmpresaService.obtenerServicios().subscribe(
       (response: any) => {
-        this.servicios = response; 
+        if (response.servicios) {
+          this.servicios = response.servicios;
+          this.errorMensaje = ''; 
+        } else {
+          this.errorMensaje = 'No se encontraron servicios disponibles';
+        }
       },
-      (error) => {
-        console.error('Error al obtener los servicios:', error);
+      error => {
+        console.error(error);
+        this.errorMensaje = 'Error al obtener los servicios';
       }
     );
   }

@@ -1,18 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiciosDeLaEmpresaService {
+  backend = environment.backend + "/servicios_de_la_empresa"; 
 
-  private apiUrl = `${environment.backend}/servicios`;
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  obtenerServicios(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  obtenerServicios(){
+    return this.http.get(`${this.backend}/obtener-servicios`);
   }
 }
